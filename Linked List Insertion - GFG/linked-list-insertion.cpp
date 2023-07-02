@@ -38,27 +38,28 @@ class Solution{
   public:
     //Function to insert a node at the beginning of the linked list.
     Node *insertAtBegining(Node *head, int x) {
-       Node *temp=new Node(x);
-       temp->next=head;
-       head=temp;
+       Node *n=new Node(x);
+       
+       n->next=head;
+       
+       head=n;
        return head;
+       
     }
     
     
     //Function to insert a node at the end of the linked list.
     Node *insertAtEnd(Node *head, int x)  {
-        Node *temp2 =head;
-        Node *tail=new Node(x);
-        if(head==NULL){
-            return tail;
-        }
-        while(temp2->next!=NULL){
-            temp2=temp2->next;
-            
-        }
-        temp2->next=tail;
-        tail->next=NULL;
-        return head;
+       Node *n=new Node(x);
+       Node *temp=head;
+       if(head==NULL){
+           return n;
+       }
+       while(temp->next!=0)
+            temp=temp->next;
+       temp->next=n;
+       n->next=NULL;
+       return head;
     }
 };
 
